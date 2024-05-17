@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="PT-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Conversor de Planilhas Excel</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css"
+      rel="stylesheet"
+    />
+  </head>
+  <body class="bg-gray-900 text-gray-200">
+    <div class="container mx-auto p-6">
+      <header class="text-center mb-10">
+        <h1 class="text-4xl font-bold mb-4">Conversor de Planilhas Excel</h1>
+        <p class="text-lg p-6">
+          Bem-vindo ao conversor de planilhas Excel! Esta aplicação permite que
+          você converta dados JSON em relatórios de Excel de forma rápida e
+          fácil.
+        </p>
+      </header>
+      <main class="bg-gray-800 p-6 rounded-lg shadow-lg max-w-2xl mx-auto">
+        <h2 class="text-2xl font-bold mb-4 text-center">Gerar Relatório</h2>
+        <form id="reportForm" class="flex flex-col space-y-4">
+          <label for="jsonData" class="block text-gray-300 font-medium"
+            >JSON Data:</label
+          >
+          <textarea
+            id="jsonData"
+            name="jsonData"
+            rows="6"
+            class="w-full bg-gray-600 p-2 rounded focus:outline-none focus:ring-2 focus:ring-gray-400 text-gray-200"
+            required
+          ></textarea>
+          <button
+            type="submit"
+            class="bg-blue-500 text-white py-2 px-4 rounded hover:bg-blue-600 transition duration-300"
+          >
+            Gerar Relatório
+          </button>
+        </form>
+        <div id="reportTable" class="mt-6"></div>
+      </main>
+    </div>
+
+    <script>
+      document
+        .getElementById("reportForm")
+        .addEventListener("submit", function (event) {
+          event.preventDefault();
+          var jsonData = document.getElementById("jsonData").value.trim();
+
+          fetch("http://localhost:5000/generate-report?type=excel", {
+            method: "POST",
+            headers: {
+              "Content-Type": "application/json",
+            },
+            body: jsonData,
+          })
+            .then((response) => {
+              if (!response.ok) {
+                throw new Error("Erro ao gerar o relatório");
+              }
+              return response.blob();
+            })
+            .then((blob) => {
+              const url = window.URL.createObjectURL(blob);
+              const a = document.createElement("a");
+              a.href = url;
+              a.download = "report.xlsx";
+              document.body.appendChild(a);
+              a.click();
+              window.URL.revokeObjectURL(url);
+              alert("Relatório gerado com sucesso!");
+            })
+            .catch((error) => {
+              console.error("Error:", error);
+              alert("Erro ao gerar o relatório");
+            });
+        });
+    </script>
+  </body>
+</html>
