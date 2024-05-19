@@ -104,10 +104,6 @@ Utilizando Flask para o backend e HTML, JS e TailwindCSS para o frontend, o conv
 - Implementar autenticação de usuário.
 - Adicionar funcionalidades de análise de dados e gráficos.
 
-#### Vídeo de Apresentação
-
-[Assista ao vídeo de apresentação do projeto](link_para_o_video)
-
 #### Contribuindo
 
 Contribuições são bem-vindas! Sinta-se à vontade para abrir uma issue ou enviar um pull request.
