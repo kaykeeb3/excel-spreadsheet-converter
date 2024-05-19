@@ -4,13 +4,13 @@ from openpyxl.styles import Alignment
 from datetime import datetime
 
 def generate_excel_report(data):
-    # Cria a pasta 'temp' se não existir
-    if not os.path.exists('app/temp'):
-        os.makedirs('app/temp')
+    # Cria a pasta 'upload' se não existir
+    if not os.path.exists('app/upload'):
+        os.makedirs('app/upload')
     
     # Define o caminho completo do relatório
     report_filename = f"report_{datetime.now().strftime('%Y-%m-%d_%H-%M-%S')}.xlsx"
-    report_path = os.path.join('app', 'temp', report_filename)
+    report_path = os.path.join('app', 'upload', report_filename)
 
     wb = Workbook()
     ws = wb.active
