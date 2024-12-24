@@ -1,128 +1,128 @@
-# Conversor de Planilhas Excel
+# Excel Spreadsheet Converter
 
-Este projeto é uma aplicação web desenvolvida para converter dados em formato **JSON** para planilhas **Excel** de maneira automatizada. Utilizando **Flask** para o backend e **HTML**, **JavaScript** e **TailwindCSS** para o frontend, a ferramenta proporciona uma experiência simples e intuitiva para a conversão de dados, economizando tempo e minimizando erros ao gerar relatórios Excel.
+This project is a web application developed to convert **JSON** data into **Excel** spreadsheets automatically. Using **Flask** for the backend and **HTML**, **JavaScript**, and **TailwindCSS** for the frontend, the tool provides a simple and intuitive experience for data conversion, saving time and minimizing errors when generating Excel reports.
 
-## Funcionalidades
+## Features
 
-- **Geração de Relatórios**: Converte dados JSON fornecidos pelo usuário em relatórios Excel personalizados.
-- **Automatização**: Facilita a criação de relatórios a partir de dados estruturados, garantindo agilidade e precisão no processo.
-- **Interface Intuitiva e Responsiva**: Desenvolvido com tecnologias modernas para garantir uma experiência de usuário otimizada em qualquer dispositivo.
+- **Report Generation**: Converts user-provided JSON data into custom Excel reports.
+- **Automation**: Simplifies report creation from structured data, ensuring speed and accuracy in the process.
+- **Intuitive and Responsive Interface**: Developed with modern technologies to ensure an optimized user experience on any device.
 
-## Tecnologias Utilizadas
+## Technologies Used
 
-- **Backend**: Flask (framework Python para APIs)
+- **Backend**: Flask (Python framework for APIs)
 - **Frontend**: HTML, TailwindCSS, JavaScript
-- **Manipulação de Dados**: Pandas (para processamento de dados)
-- **Geração de Excel**: Openpyxl (para criação e manipulação de arquivos Excel)
+- **Data Manipulation**: Pandas (for data processing)
+- **Excel Generation**: Openpyxl (for creating and manipulating Excel files)
 
-## Pré-requisitos
+## Prerequisites
 
-Antes de iniciar, você precisa ter os seguintes pré-requisitos instalados:
+Before starting, you need to have the following prerequisites installed:
 
 - **Python 3.x**
-- **Pip** (gerenciador de pacotes Python)
+- **Pip** (Python package manager)
 
-## Instalação
+## Installation
 
-1. Clone o repositório:
+1. Clone the repository:
 
    ```bash
    git clone https://github.com/kaykeeb3/excel-spreadsheet-converter.git
    cd excel-spreadsheet-converter
    ```
 
-2. Crie e ative um ambiente virtual:
+2. Create and activate a virtual environment:
 
-   Para Linux/macOS:
+   For Linux/macOS:
 
    ```bash
    python3 -m venv venv
    source venv/bin/activate
    ```
 
-   Para Windows:
+   For Windows:
 
    ```bash
    python -m venv venv
    venv\Scripts\activate
    ```
 
-3. Instale as dependências do projeto:
+3. Install the project dependencies:
 
    ```bash
    pip install -r requirements.txt
    ```
 
-## Executando a Aplicação
+## Running the Application
 
-1. Inicie o servidor Flask:
+1. Start the Flask server:
 
    ```bash
    python app.py
    ```
 
-2. Abra o navegador e acesse `http://localhost:5000` para usar a aplicação.
+2. Open your browser and go to `http://localhost:5000` to use the application.
 
-## Uso
+## Usage
 
-1. Cole os dados **JSON** no campo fornecido na interface.
-2. Clique no botão **"Gerar Relatório"**.
-3. O arquivo Excel será gerado automaticamente e será baixado para o seu dispositivo.
+1. Paste the **JSON** data into the provided field on the interface.
+2. Click the **"Generate Report"** button.
+3. The Excel file will be automatically generated and downloaded to your device.
 
-### Exemplo de Dados JSON
+### Example JSON Data
 
-Aqui está um exemplo de como os dados JSON devem ser estruturados para gerar um relatório:
+Here is an example of how the JSON data should be structured to generate a report:
 
 ```json
 [
   {
     "ID": 1,
-    "Nome do cliente": "Alice",
-    "Nome do cliente que chamou no WhatsApp": "João",
-    "Nome da empresa": "Empresa A",
-    "Duvida do cliente": "Produto X",
-    "Horário que chamou": "10:00",
-    "Tempo médio de resposta": "15 minutos",
-    "Data": "2024-05-20",
-    "Dia: .. Atendimento do dia": "Segunda-feira"
+    "Customer Name": "Alice",
+    "Customer who called on WhatsApp": "João",
+    "Company Name": "Company A",
+    "Customer Query": "Product X",
+    "Call Time": "10:00",
+    "Average Response Time": "15 minutes",
+    "Date": "2024-05-20",
+    "Day: .. Service of the Day": "Monday"
   },
   {
     "ID": 2,
-    "Nome do cliente": "Bob",
-    "Nome do cliente que chamou no WhatsApp": "Maria",
-    "Nome da empresa": "Empresa B",
-    "Duvida do cliente": "Serviço Y",
-    "Horário que chamou": "11:30",
-    "Tempo médio de resposta": "20 minutos",
-    "Data": "2024-05-20",
-    "Dia: .. Atendimento do dia": "Segunda-feira"
+    "Customer Name": "Bob",
+    "Customer who called on WhatsApp": "Maria",
+    "Company Name": "Company B",
+    "Customer Query": "Service Y",
+    "Call Time": "11:30",
+    "Average Response Time": "20 minutes",
+    "Date": "2024-05-20",
+    "Day: .. Service of the Day": "Monday"
   },
   {
     "ID": 3,
-    "Nome do cliente": "Charlie",
-    "Nome do cliente que chamou no WhatsApp": "Pedro",
-    "Nome da empresa": "Empresa C",
-    "Duvida do cliente": "Produto Z",
-    "Horário que chamou": "14:45",
-    "Tempo médio de resposta": "10 minutos",
-    "Data": "2024-05-21",
-    "Dia: .. Atendimento do dia": "Terça-feira"
+    "Customer Name": "Charlie",
+    "Customer who called on WhatsApp": "Pedro",
+    "Company Name": "Company C",
+    "Customer Query": "Product Z",
+    "Call Time": "14:45",
+    "Average Response Time": "10 minutes",
+    "Date": "2024-05-21",
+    "Day: .. Service of the Day": "Tuesday"
   }
 ]
 ```
 
-## Melhorias Futuras
+## Future Improvements
 
-- **Suporte a Mais Formatos**: Implementação de suporte para importar e exportar outros formatos de dados (CSV, XML, etc.).
-- **Autenticação de Usuários**: Implementação de autenticação e autorização de usuários para controle de acesso aos relatórios.
-- **Análise de Dados**: Adição de funcionalidades para análise e visualização de dados com gráficos e relatórios dinâmicos.
+- **Support for More Formats**: Implement support for importing and exporting other data formats (CSV, XML, etc.).
+- **User Authentication**: Implement user authentication and authorization to control access to reports.
+- **Data Analysis**: Add features for data analysis and visualization with charts and dynamic reports.
 
-## Contribuindo
+## Contributing
 
-Contribuições são sempre bem-vindas! Para contribuir, siga os passos abaixo:
+Contributions are always welcome! To contribute, follow these steps:
 
-1. Faça um **fork** do repositório.
-2. Crie uma **branch** para sua feature (`git checkout -b feature/nova-feature`).
-3. Realize suas alterações e faça o **commit** (`git commit -am 'Adicionei uma nova feature'`).
-4. Envie sua branch para o repositório remoto (`git push origin feature/nova-feature`).
-5. Abra um **Pull Request** com uma descrição clara das alterações realizadas.
+1. Fork the repository.
+2. Create a branch for your feature (`git checkout -b feature/new-feature`).
+3. Make your changes and commit (`git commit -am 'Added a new feature'`).
+4. Push your branch to the remote repository (`git push origin feature/new-feature`).
+5. Open a **Pull Request** with a clear description of the changes made.
